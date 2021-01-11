@@ -23,8 +23,11 @@ public class SnakeAndLadder {
                     System.out.println(">>>>>>NoPlay");
                     break;
                 case LADDER:
+                    if((currentPosition+dieMove)>winningPosition)
+                        currentPosition=currentPosition;
+                    else{
                     currentPosition = currentPosition + dieMove;
-                    System.out.println(">>>>>>U got ladder");
+                    System.out.println(">>>>>>U got ladder");}
                     break;
                 case SNAKE:
                     if ((currentPosition - dieMove) <= 0)
