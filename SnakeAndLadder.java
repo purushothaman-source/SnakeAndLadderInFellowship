@@ -13,10 +13,13 @@ public class SnakeAndLadder {
         final int SNAKE = 2;
         int currentPosition = INITIAL_POSITION;
         int winningPosition = 100;
+        int timeDiesRolled = 0;
+
 
         while (currentPosition < winningPosition) {
             int option = random.nextInt(3);
             int dieMove = rollDie();
+            timeDiesRolled++;
             switch (option) {
                 case NO_PLAY:
                     currentPosition += 0;
@@ -39,6 +42,7 @@ public class SnakeAndLadder {
             }
             System.out.println("PlayerPosition = " + currentPosition);
         }
+        System.out.println("******PlayerRolled "+timeDiesRolled+" times to reach Winning Position*****");
     }
 
     public static int rollDie() {
